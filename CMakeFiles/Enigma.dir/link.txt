@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -dynamiclib -Wl,-headerpad_max_install_names -o libEnigma.dylib -install_name @rpath/libEnigma.dylib CMakeFiles/Enigma.dir/lib/Rotor.c.o CMakeFiles/Enigma.dir/lib/Plugboard.c.o CMakeFiles/Enigma.dir/lib/Reflector.c.o CMakeFiles/Enigma.dir/lib/Enigma.c.o 

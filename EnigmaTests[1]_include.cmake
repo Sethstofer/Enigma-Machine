@@ -1,0 +1,5 @@
+if(EXISTS "/Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/EnigmaTests[1]_tests.cmake")
+  include("/Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/EnigmaTests[1]_tests.cmake")
+else()
+  add_test(EnigmaTests_NOT_BUILT EnigmaTests_NOT_BUILT)
+endif()

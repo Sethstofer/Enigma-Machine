@@ -4,12 +4,17 @@
 #include "common.h"
 #include <stdlib.h>
 
+#include "Plugboard.h"
+
 /// "[The Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine#) is a
 /// cipher device developed and used in the early- to mid-20th century to
 /// protect commercial, diplomatic, and military communication." -- Wikipedia
 ///
 /// This is a struct that represent the machine. It has the following methods.
-typedef struct Enigma Enigma;
+// typedef struct Enigma Enigma;
+typedef struct Enigma {
+    Plugboard *plugboard;
+} Enigma;
 
 /// @brief Creates a new Enigma machine
 /// @param num_rotors The number of rotors used in this machine
