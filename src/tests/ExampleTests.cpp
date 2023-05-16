@@ -16,7 +16,7 @@ TEST(ExampleTests, TestPlugboard) {
   EXPECT_STREQ(encrypt, ECS153);
   free_Enigma(enigma);
 }
-/*
+
 TEST(ExampleTests, TestReflector_Ident) {
   Enigma *enigma = new_Enigma(0, NULL, NULL, NULL, LETTERS, 0, NULL);
   char encrypt[64];
@@ -43,7 +43,7 @@ TEST(ExampleTests, TestPlugboardAndReflector_UKWA) {
   EXPECT_STREQ(encrypt, "W BUYGGA GWFU UQM NOU KWPU DZBUU");
   free_Enigma(enigma);
 }
-
+/*
 Enigma *get_default_Enigma() {
   const char *rotors[] = {ROTOR_I, ROTOR_II, ROTOR_III};
   size_t rings[] = {1, 5, 3};

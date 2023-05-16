@@ -78,8 +78,8 @@ CMakeFiles/Enigma.dir/lib/Enigma.c.o: /Users/sethsjo/Documents/myCode/ECS\ 153\ 
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/secure/_strings.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/secure/_common.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/secure/_string.h \
-  /Users/sethsjo/Documents/myCode/ECS\ 153\ -\ Hao\ Chen/Enigma-Machine-ECS153/src/include/EnigmaImpl.h \
   /Users/sethsjo/Documents/myCode/ECS\ 153\ -\ Hao\ Chen/Enigma-Machine-ECS153/src/include/Reflector.h \
+  /Users/sethsjo/Documents/myCode/ECS\ 153\ -\ Hao\ Chen/Enigma-Machine-ECS153/src/include/EnigmaImpl.h \
   /Users/sethsjo/Documents/myCode/ECS\ 153\ -\ Hao\ Chen/Enigma-Machine-ECS153/src/include/Rotor.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_stdio.h \
@@ -248,7 +248,14 @@ CMakeFiles/Enigma.dir/lib/Reflector.c.o: /Users/sethsjo/Documents/myCode/ECS\ 15
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/strings.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/secure/_strings.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/secure/_common.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/secure/_string.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/secure/_string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/stdio.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_stdio.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_va_list.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/stdio.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/_ctermid.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_off_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/secure/_stdio.h
 
 CMakeFiles/Enigma.dir/lib/Rotor.c.o: /Users/sethsjo/Documents/myCode/ECS\ 153\ -\ Hao\ Chen/Enigma-Machine-ECS153/src/lib/Rotor.c \
   /Users/sethsjo/Documents/myCode/ECS\ 153\ -\ Hao\ Chen/Enigma-Machine-ECS153/src/include/Rotor.h \

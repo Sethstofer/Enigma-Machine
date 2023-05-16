@@ -40,12 +40,14 @@ char *apply_Plugboard(Plugboard *self, const char* message)
     if (!self) return NULL;
     if (!message) return NULL;
 
-    char *plugboardtxt = (char*)malloc(sizeof(char) * strlen(message));
+    size_t messageCapacity = (sizeof(char) * strlen(message)) + 1;
+    char *plugboardtxt = (char*)malloc(messageCapacity);
     if (!plugboardtxt)
     {
         fprintf(stderr, "Error: Failure in memory allocation.\n");
         return 0;
     }
+    memset(plugboardtxt, 0, messageCapacity);
     strcpy(plugboardtxt, message);
 
     int i = 0;
@@ -58,6 +60,8 @@ char *apply_Plugboard(Plugboard *self, const char* message)
             {
                 // determine with what to switch
                 plugboardtxt[i] = (j % 2 == 0) ? self->pairs[j + 1] : self->pairs[j - 1];
+                // once switch letter is found, continue to next letter in message
+                break;
             }
         }
         i++;
@@ -69,6 +73,6 @@ char *apply_Plugboard(Plugboard *self, const char* message)
 
 void free_Plugboard(Plugboard *self)
 {
-    free(self->pairs);
-    free(self);
+    if (self->pairs) free(self->pairs);
+    if (self) free(self);
 }
