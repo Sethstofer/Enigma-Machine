@@ -43,7 +43,7 @@ TEST(ExampleTests, TestPlugboardAndReflector_UKWA) {
   EXPECT_STREQ(encrypt, "W BUYGGA GWFU UQM NOU KWPU DZBUU");
   free_Enigma(enigma);
 }
-/*
+
 Enigma *get_default_Enigma() {
   const char *rotors[] = {ROTOR_I, ROTOR_II, ROTOR_III};
   size_t rings[] = {1, 5, 3};
@@ -69,7 +69,7 @@ TEST(ExampleTests, TestRotorTicking) {
   ASSERT_STREQ("YLD", settings);
   free_Enigma(enigma);
 }
-
+/*
 TEST(ExampleTests, TestEnigmaOneRotorWORing) {
   // Plugboard: C->C
   // Rotor I: C->J

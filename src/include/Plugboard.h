@@ -17,11 +17,11 @@ typedef struct Plugboard {
 /// @return The new plugboard created
 Plugboard *new_Plugboard(size_t num_pairs, const char *pairs);
 
-/// @brief Apply character switching on a message through a given plugboard
+/// @brief Apply character switching on a letter through a given plugboard
 /// @param self The plugboard used for switching
-/// @param message The message to put through the plugboard
-/// @return A character pointer to a string representing message through plugboard
-char *apply_Plugboard(Plugboard *self, const char* message);
+/// @param letter Pointer to a letter to put through the plugboard
+/// @return Address of character representing letter after plugboard
+char *apply_Plugboard(Plugboard *self, char *letter);
 
 /// @brief Free plugboard memory
 /// @param self The plugboard to free

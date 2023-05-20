@@ -35,44 +35,31 @@ Plugboard *new_Plugboard(size_t num_pairs, const char *pairs)
     return plugboard;
 }
 
-char *apply_Plugboard(Plugboard *self, const char* message)
+char *apply_Plugboard(Plugboard *self, char *letter)
 {
     if (!self) return NULL;
-    if (!message) return NULL;
+    if (!letter) return NULL;
 
-    size_t messageCapacity = (sizeof(char) * strlen(message)) + 1;
-    char *plugboardtxt = (char*)malloc(messageCapacity);
-    if (!plugboardtxt)
+    // check letter with plugboard switches
+    for (int j = 0; j < (2 * self->num_pairs); j++)
     {
-        fprintf(stderr, "Error: Failure in memory allocation.\n");
-        return 0;
-    }
-    memset(plugboardtxt, 0, messageCapacity);
-    strcpy(plugboardtxt, message);
-
-    int i = 0;
-    while (plugboardtxt[i] != 0)
-    {
-        // check each character in `plugboardtxt` with plugboard switches
-        for (int j = 0; j < (2 * self->num_pairs); j++)
+        if (*letter == self->pairs[j])
         {
-            if (plugboardtxt[i] == self->pairs[j])
-            {
-                // determine with what to switch
-                plugboardtxt[i] = (j % 2 == 0) ? self->pairs[j + 1] : self->pairs[j - 1];
-                // once switch letter is found, continue to next letter in message
-                break;
-            }
+            // determine with what to switch
+            *letter = (j % 2 == 0) ? self->pairs[j + 1] : self->pairs[j - 1];
+            // once switch letter is found, function is done
+            break;
         }
-        i++;
     }
 
-    // NOTICE: `plugboardtxt` must be freed after use
-    return plugboardtxt;
+    return letter;
 }
 
 void free_Plugboard(Plugboard *self)
 {
-    if (self->pairs) free(self->pairs);
-    if (self) free(self);
+    if (self)
+    {
+        if (self->pairs) free(self->pairs);
+        free(self);
+    }
 }

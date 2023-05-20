@@ -6,6 +6,7 @@
 
 #include "Plugboard.h"
 #include "Reflector.h"
+#include "Rotor.h"
 
 /// "[The Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine#) is a
 /// cipher device developed and used in the early- to mid-20th century to
@@ -16,6 +17,8 @@
 typedef struct Enigma {
     Plugboard *plugboard;
     Reflector *reflector;
+    Rotor **rotors;
+    size_t num_rotors;
 } Enigma;
 
 /// @brief Creates a new Enigma machine

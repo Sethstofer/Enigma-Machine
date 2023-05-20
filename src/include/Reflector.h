@@ -13,11 +13,11 @@ typedef struct Reflector {
 /// @return Pointer to the new reflector
 Reflector *new_Reflector(const char *reflections);
 
-/// @brief Apply a reflector on a message
+/// @brief Apply a reflector on a letter
 /// @param self The reflector to apply
-/// @param message The message onto which to apply the reflector
-/// @return The output of reflecting the message
-char *apply_Reflector(Reflector *self, const char *message);
+/// @param letter The letter to put through reflector
+/// @return Address of reflected letter
+char *apply_Reflector(Reflector *self, char *letter);
 
 /// @brief Free from heap the data for a reflector
 /// @param self The reflector to free

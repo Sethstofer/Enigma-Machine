@@ -83,6 +83,7 @@ CMakeFiles/EnigmaTests.dir/tests/AutograderTests.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_ssize_t.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/strings.h
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/include/Reflector.h
+ /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/include/Rotor.h
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/_deps/googletest-src/googletest/include/gtest/gtest.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cstddef
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/version
@@ -559,6 +560,7 @@ CMakeFiles/EnigmaTests.dir/tests/EnigmaTests.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_ssize_t.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/strings.h
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/include/Reflector.h
+ /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/include/Rotor.h
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/_deps/googletest-src/googletest/include/gtest/gtest.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cstddef
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/version
@@ -1035,6 +1037,7 @@ CMakeFiles/EnigmaTests.dir/tests/ExampleTests.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_ssize_t.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/strings.h
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/include/Reflector.h
+ /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/include/Rotor.h
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/_deps/googletest-src/googletest/include/gtest/gtest.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cstddef
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/version
@@ -2381,35 +2384,10 @@ CMakeFiles/EnigmaTests.dir/tests/RotorTests.cpp.o
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/tests/RotorTests.cpp
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/include/Rotor.h
  /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/src/include/common.h
- /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/_deps/googletest-src/googletest/include/gtest/gtest.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cstddef
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/stdlib.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config_site
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/pthread.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/version
- /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include/stddef.h
- /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include/__stddef_max_align_t.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__nullptr
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/limits
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/type_traits
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__utility/forward.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__utility/move.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__undef_macros
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/memory
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional_base
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/binary_function.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/invoke.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/weak_result_type.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/unary_function.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/operations.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/reference_wrapper.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__memory/addressof.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__memory/allocator_arg_t.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__memory/uses_allocator.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/exception
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__availability
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cstdlib
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/stdlib.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/stdlib.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/Availability.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/AvailabilityVersions.h
@@ -2476,6 +2454,31 @@ CMakeFiles/EnigmaTests.dir/tests/RotorTests.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/malloc/_malloc.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_dev_t.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/sys/_types/_mode_t.h
+ /Users/sethsjo/Documents/myCode/ECS 153 - Hao Chen/Enigma-Machine-ECS153/_deps/googletest-src/googletest/include/gtest/gtest.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cstddef
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/version
+ /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include/stddef.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include/__stddef_max_align_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__nullptr
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/limits
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/type_traits
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__utility/forward.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__utility/move.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__undef_macros
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/memory
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional_base
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/binary_function.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/invoke.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/weak_result_type.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/unary_function.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/operations.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/reference_wrapper.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__memory/addressof.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__memory/allocator_arg_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__memory/uses_allocator.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/exception
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__availability
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cstdlib
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/new
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/typeinfo
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cstdint

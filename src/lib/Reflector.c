@@ -29,46 +29,28 @@ Reflector *new_Reflector(const char *reflections)
     return reflector;
 }
 
-char *apply_Reflector(Reflector *self, const char *message)
+char *apply_Reflector(Reflector *self, char *letter)
 {
     if (!self) return NULL;
-    if (!message) return NULL;
+    if (!letter) return NULL;
 
-    // we can trust reflector's contents will be A-Z jumbled (or not)
-    size_t messageCapacity = (sizeof(char) * strlen(message)) + 1;
-    char *reflected_m = (char*)malloc(messageCapacity);
-    if (!reflected_m)
+    // ignore spaces; ASCII <Space> is decimal 32
+    if (*letter != 32)
     {
-        fprintf(stderr, "Error: Failure in memory allocation.\n");
-        return 0;
-    }
-    memset(reflected_m, 0, messageCapacity);
-
-    // reflect letters of message
-    int i = 0, alphaoffset;
-    while (message[i])
-    {
-        // ignore spaces; ASCII <Space> is decimal 32
-        if (message[i] == 32)
-        {
-            reflected_m[i] = 32;
-        }
-        else
-        {
-            // determine letter's offset from A
-            alphaoffset = message[i] - 65;
-            // make reflected output the reflection of this letter
-            reflected_m[i] = self->reflections[alphaoffset];
-        }
-        i++;
+        // determine letter's offset from A
+        int alphaoffset = *letter - 65;
+        // make reflected output the reflection of this letter
+        *letter = self->reflections[alphaoffset];
     }
 
-    // NOTICE: `reflected_m` must be freed after use
-    return reflected_m;
+    return letter;
 }
 
 void free_Reflector(Reflector *self)
 {
-    if (self->reflections) free(self->reflections);
-    if (self) free(self);
+    if (self)
+    {
+        if (self->reflections) free(self->reflections);
+        free(self);
+    }
 }
