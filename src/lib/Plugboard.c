@@ -9,7 +9,7 @@
 Plugboard *new_Plugboard(size_t num_pairs, const char *pairs)
 {
     // potential lack of null terminator in pairs should (?) be handled by compiler
-    int pairsLen = strlen(pairs);
+    size_t pairsLen = strlen(pairs);
     // ensure multiple of 2 length and num_pairs logically matches
     if ( !((pairsLen % 2 == 0) && (2 * num_pairs == pairsLen)) ) return NULL;
     if (num_pairs == 0) return NULL;
@@ -23,7 +23,7 @@ Plugboard *new_Plugboard(size_t num_pairs, const char *pairs)
         return 0;
     }
     plugboard->num_pairs = num_pairs;
-    plugboard->pairs = (char*)malloc(sizeof(char) * 2 * num_pairs);
+    plugboard->pairs = (char*)malloc(sizeof(char) * 2 * num_pairs + 1);
     if (!plugboard->pairs)
     {
         fprintf(stderr, "Error: Failure in memory allocation.\n");
@@ -41,7 +41,7 @@ char *apply_Plugboard(Plugboard *self, char *letter)
     if (!letter) return NULL;
 
     // check letter with plugboard switches
-    for (int j = 0; j < (2 * self->num_pairs); j++)
+    for (size_t j = 0; j < (2 * self->num_pairs); j++)
     {
         if (*letter == self->pairs[j])
         {

@@ -69,7 +69,7 @@ TEST(ExampleTests, TestRotorTicking) {
   ASSERT_STREQ("YLD", settings);
   free_Enigma(enigma);
 }
-/*
+
 TEST(ExampleTests, TestEnigmaOneRotorWORing) {
   // Plugboard: C->C
   // Rotor I: C->J
@@ -101,7 +101,7 @@ TEST(ExampleTests, TestEnigmaOneRotorWRing) {
   ASSERT_STREQ(encrypt, "V");
   free_Enigma(enigma);
 }
-
+/*
 TEST(ExampleTests, IntegralTest) {
   Enigma *enigma = get_default_Enigma();
   char encrypt[64];

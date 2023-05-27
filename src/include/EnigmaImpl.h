@@ -11,4 +11,11 @@
 //     Plugboard *plugboard;
 // };
 
+struct Enigma {
+    Plugboard *plugboard;
+    Reflector *reflector;
+    Rotor **rotors;
+    size_t num_rotors;
+};
+
 #endif

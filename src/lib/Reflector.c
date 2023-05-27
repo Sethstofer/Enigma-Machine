@@ -17,7 +17,7 @@ Reflector *new_Reflector(const char *reflections)
         fprintf(stderr, "Error: Failure in memory allocation.\n");
         return 0;
     }
-    reflector->reflections = (char*)malloc(sizeof(char) * strlen(reflections));
+    reflector->reflections = (char*)malloc(sizeof(char) * strlen(reflections) + 1);
     if (!reflector->reflections)
     {
         fprintf(stderr, "Error: Failure in memory allocation.\n");
