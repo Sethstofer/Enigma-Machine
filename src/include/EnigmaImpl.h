@@ -6,12 +6,8 @@
 #include "Reflector.h"
 #include "Rotor.h"
 
-// struct Enigma {
-//     /* Your implementation of Enigma */
-//     Plugboard *plugboard;
-// };
-
 struct Enigma {
+    /* Your implementation of Enigma */
     Plugboard *plugboard;
     Reflector *reflector;
     Rotor **rotors;

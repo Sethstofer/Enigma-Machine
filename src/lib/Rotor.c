@@ -43,12 +43,12 @@ char *apply_Rotors_frwd(Rotor **rotors, size_t num_rotors, char *letter)
         // ignore spaces; ASCII <Space> is decimal 32
         if (*letter != 32)
         {
-            // determine letter's offset from rotor's "start"
+            // determine letter's entry point into rotor (Self := rotor)
             size_t alphaoffsetSelf = ((*letter - 65) + (rotors[i]->offset - rotors[i]->ringDelta));
             alphaoffsetSelf = (alphaoffsetSelf + 26) % 26;
             // output based on rotor configuration
             char outputSelf = rotors[i]->rotorConfig[alphaoffsetSelf];
-            // determine which input this letter will be with respect to the world (other rotors/reflector)
+            // determine which input this letter will be wrt the world (other rotors/reflector)
             size_t alphaoffsetWorld = (outputSelf - 65) - (rotors[i]->offset - rotors[i]->ringDelta);
             alphaoffsetWorld = (alphaoffsetWorld + 26) % 26;
             *letter = LETTERS[alphaoffsetWorld];

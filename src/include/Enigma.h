@@ -14,12 +14,6 @@
 ///
 /// This is a struct that represent the machine. It has the following methods.
 typedef struct Enigma Enigma;
-// typedef struct Enigma {
-//     Plugboard *plugboard;
-//     Reflector *reflector;
-//     Rotor **rotors;
-//     size_t num_rotors;
-// } Enigma;
 
 /// @brief Creates a new Enigma machine
 /// @param num_rotors The number of rotors used in this machine

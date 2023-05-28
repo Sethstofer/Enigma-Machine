@@ -101,7 +101,7 @@ TEST(ExampleTests, TestEnigmaOneRotorWRing) {
   ASSERT_STREQ(encrypt, "V");
   free_Enigma(enigma);
 }
-/*
+
 TEST(ExampleTests, IntegralTest) {
   Enigma *enigma = get_default_Enigma();
   char encrypt[64];
@@ -116,5 +116,5 @@ TEST(ExampleTests, IntegralTest) {
   EXPECT_STREQ(ECS153, decrypt);
   free_Enigma(enigma);
 }
-*/
+
 } // namespace

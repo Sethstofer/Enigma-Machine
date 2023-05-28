@@ -6,6 +6,8 @@
 
 #include "stdio.h"
 
+#define DEBUG
+
 /* Your code to implement Enigma here */
 
 Enigma *new_Enigma(size_t num_rotors, const char **rotors, size_t *rings,
@@ -105,14 +107,26 @@ char *encrypt_Enigma(Enigma *self, char *dst, const char *src)
     // for each character of message, put through Enigma machine
     while (ciphertext[i])
     {
+        #ifdef DEBUG
         printf("\nCharacter #%lu:\n", i + 1);
+        #endif
+
+        // ignore spaces; ASCII <Space> is decimal 32
+        if (ciphertext[i] != 32)
+        {
+            tick_Enigma(self);
+        }
 
         // apply plugboard
         if (self->plugboard != NULL)
         {
+            #ifdef DEBUG
             printf("Plugboard:\t%c -> ", ciphertext[i]);
+            #endif
             ret = apply_Plugboard(self->plugboard, &ciphertext[i]);
+            #ifdef DEBUG
             printf("%c\n", *ret);
+            #endif
             if (ret == NULL)
             {
                 fprintf(stderr, "Error: Failure in plugboard application.\n");
@@ -123,10 +137,13 @@ char *encrypt_Enigma(Enigma *self, char *dst, const char *src)
         // apply rotors first to last
         if (self->rotors != NULL)
         {
-            tick_Enigma(self);
+            #ifdef DEBUG
             printf("Rotors:\t\t%c -> ", ciphertext[i]);
+            #endif
             ret = apply_Rotors_frwd(self->rotors, self->num_rotors, &ciphertext[i]);
+            #ifdef DEBUG
             printf("%c\n", *ret);
+            #endif
             if (ret == NULL)
             {
                 fprintf(stderr, "Error: Failure in forward rotors application.\n");
@@ -137,9 +154,13 @@ char *encrypt_Enigma(Enigma *self, char *dst, const char *src)
         // apply reflector
         if (self->reflector != NULL)
         {
+            #ifdef DEBUG
             printf("Reflector:\t%c -> ", ciphertext[i]);
+            #endif
             ret = apply_Reflector(self->reflector, &ciphertext[i]);
+            #ifdef DEBUG
             printf("%c\n", *ret);
+            #endif
             if (ret == NULL)
             {
                 fprintf(stderr, "Error: Failure in reflector application.\n");
@@ -150,9 +171,13 @@ char *encrypt_Enigma(Enigma *self, char *dst, const char *src)
         // apply rotors last to first
         if (self->rotors != NULL)
         {
+            #ifdef DEBUG
             printf("Rotors:\t\t%c -> ", ciphertext[i]);
+            #endif
             ret = apply_Rotors_bkwd(self->rotors, self->num_rotors, &ciphertext[i]);
+            #ifdef DEBUG
             printf("%c\n", *ret);
+            #endif
             if (ret == NULL)
             {
                 fprintf(stderr, "Error: Failure in forward rotors application.\n");
@@ -163,9 +188,13 @@ char *encrypt_Enigma(Enigma *self, char *dst, const char *src)
         // apply plugboard again
         if (self->plugboard != NULL)
         {
+            #ifdef DEBUG
             printf("Plugboard:\t%c -> ", ciphertext[i]);
+            #endif
             ret = apply_Plugboard(self->plugboard, &ciphertext[i]);
+            #ifdef DEBUG
             printf("%c\n", *ret);
+            #endif
             if (ret == NULL)
             {
                 fprintf(stderr, "Error: Failure in plugboard application.\n");
@@ -223,32 +252,46 @@ void tick_Enigma(Enigma *self)
     // AND it turns the next rotor (except for last rotor by mechanical reasons; no pawl
     // for last rotor's notches)
 
+    #ifdef DEBUG
+    printf("ticks: ");
+    #endif
+
     // determine tick for each rotor
     int carry = 1;      // always tick first rotor
     for (size_t i = 0; i < self->num_rotors; i++)
     {
-        // move rotor if carry
         int prevOffset = self->rotors[i]->offset;
-        //printf("current letter of rotor %d: %c\n", i+1, self->rotors[i]->rotorConfig[self->rotors[i]->offset]);
+        int haveTicked = 0;
+
+        // move rotor if carry
         if (carry)
         {
             self->rotors[i]->offset = (self->rotors[i]->offset < 25) ? ++self->rotors[i]->offset : 0;
+            haveTicked = 1;
         }
+
+        #ifdef DEBUG
+        printf("%d: %c, ", carry, LETTERS[self->rotors[i]->offset]);
+        #endif
 
         // determine if rotor's tick should cause next rotor to tick (last rotor ignored)
         int j = 27;     // start past comma in rotor's config
         carry = 0;      // tick determinant for next rotor
         while ((i != self->num_rotors - 1) && self->rotors[i]->rotorConfig[j])
         {
-            // adjust notch letter to match ring offset
-            int notchOffset = (self->rotors[i]->rotorConfig[j] - 65) - self->rotors[i]->ringDelta;
-            notchOffset = (notchOffset + 26) % 26;
-            char notch = LETTERS[notchOffset];
-            if (notch == self->rotors[i]->rotorConfig[prevOffset])
+            /// "purpose of ring is changing the input/output without affecting notch location"
+            /// "init rotates it forwards like normal, which also moves the notch"
+            /// -Josh
+
+            if (self->rotors[i]->rotorConfig[prevOffset] == self->rotors[i]->rotorConfig[j])
             {
                 // handle double stepping
-                if (i != 0)
+                if ((i != 0) && !haveTicked)
                 {
+                    #ifdef DEBUG
+                    printf("Double step occuring...\n");
+                    #endif
+                    
                     self->rotors[i]->offset = (self->rotors[i]->offset < 25) ? ++self->rotors[i]->offset : 0;
                 }
 
@@ -258,6 +301,10 @@ void tick_Enigma(Enigma *self)
             j++;
         }
     }
+
+    #ifdef DEBUG
+    printf("\n");
+    #endif
 }
 
 void tick_n_Enigma(Enigma *self, size_t n)
