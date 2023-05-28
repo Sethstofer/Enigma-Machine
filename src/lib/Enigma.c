@@ -6,7 +6,7 @@
 
 #include "stdio.h"
 
-#define DEBUG
+//#define DEBUG
 
 /* Your code to implement Enigma here */
 
@@ -281,9 +281,7 @@ void tick_Enigma(Enigma *self)
         {
             /// "purpose of ring is changing the input/output without affecting notch location"
             /// "init rotates it forwards like normal, which also moves the notch"
-            /// -Josh
-
-            if (self->rotors[i]->rotorConfig[prevOffset] == self->rotors[i]->rotorConfig[j])
+            if (LETTERS[prevOffset] == self->rotors[i]->rotorConfig[j])
             {
                 // handle double stepping
                 if ((i != 0) && !haveTicked)
@@ -291,7 +289,7 @@ void tick_Enigma(Enigma *self)
                     #ifdef DEBUG
                     printf("Double step occuring...\n");
                     #endif
-                    
+
                     self->rotors[i]->offset = (self->rotors[i]->offset < 25) ? ++self->rotors[i]->offset : 0;
                 }
 

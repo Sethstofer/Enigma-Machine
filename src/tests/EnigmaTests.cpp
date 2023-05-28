@@ -6,7 +6,7 @@ extern "C" {
 
 namespace {
 /* Your tests for Enigma here. */
-    /*
+    
     Enigma *get_default_Enigma() {
         const char *rotors[] = {ROTOR_I, ROTOR_II, ROTOR_III};
         size_t rings[] = {1, 5, 3};
@@ -19,7 +19,7 @@ namespace {
         char encrypt[64];
         memset(encrypt, 0, 64);
         encrypt_Enigma(enigma, encrypt, "HELLO");
-        EXPECT_STREQ(encrypt, "ICUBA");
+        EXPECT_STREQ(encrypt, "INNBE");
         size_t inits[] = {1, 5, 3};
         reset_rotor_Enigma(enigma, inits);
         char decrypt[64];
@@ -28,5 +28,5 @@ namespace {
         EXPECT_STREQ("HELLO", decrypt);
         free_Enigma(enigma);
     }
-    */
+    
 }

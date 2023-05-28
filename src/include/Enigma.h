@@ -4,10 +4,6 @@
 #include "common.h"
 #include <stdlib.h>
 
-#include "Plugboard.h"
-#include "Reflector.h"
-#include "Rotor.h"
-
 /// "[The Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine#) is a
 /// cipher device developed and used in the early- to mid-20th century to
 /// protect commercial, diplomatic, and military communication." -- Wikipedia

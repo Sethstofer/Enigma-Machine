@@ -1,7 +1,7 @@
 #include "Rotor.h"
 #include "common.h"
-#include "string.h"
 
+#include "string.h"
 #include "stdio.h"
 
 /* Your code to implement Rotor here */
