@@ -1,5 +1,5 @@
 
 .DS_Store
 .vscode/settings.json
-src/build_asan
-src/lib/scratch.md
+src/build
+scratch.md

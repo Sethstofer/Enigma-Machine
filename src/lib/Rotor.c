@@ -9,7 +9,6 @@
 Rotor *new_Rotor(const char *rotorConfig, size_t init, size_t ring)
 {
     if (!rotorConfig) return NULL;
-    if (!init) return NULL;
 
     Rotor *rotor = (Rotor*)malloc(sizeof(Rotor));
     if (!rotor)

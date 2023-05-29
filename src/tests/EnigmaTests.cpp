@@ -14,6 +14,16 @@ namespace {
         return new_Enigma(3, rotors, rings, inits, I_UKW_A, 5, "ECSONFIVTH");
     }
 
+    TEST(Self, OneRotor) {
+    const char *rotors[] = {ROTOR_I};
+    size_t rings[] = {0};
+    size_t inits[] = {0};
+    Enigma *enigma = new_Enigma(1, rotors, rings, inits, I_UKW_A, 0, NULL);
+    char encrypt[] = "\0\0\0\0";
+    encrypt_Enigma(enigma, encrypt, "C");
+    free_Enigma(enigma);
+    }
+
     TEST(Self, Integral) {
         Enigma *enigma = get_default_Enigma();
         char encrypt[64];

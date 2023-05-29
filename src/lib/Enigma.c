@@ -40,7 +40,7 @@ Enigma *new_Enigma(size_t num_rotors, const char **rotors, size_t *rings,
     enigma->num_rotors = 0;
 
     // create rotors
-    if ((num_rotors != 0) && (rotors != NULL) && (inits != 0))
+    if ((num_rotors != 0) && (rotors != NULL))
     {
         enigma->rotors = (Rotor**)malloc(sizeof(Rotor*) * num_rotors);
         if (!enigma->rotors)
@@ -248,6 +248,8 @@ void get_setting_Enigma(Enigma *self, char *ret)
 
 void tick_Enigma(Enigma *self)
 {
+    if (self->num_rotors == 0) return;
+
     // NOTE: "double stepping": whenever a rotor is in a notch position, it turns itself
     // AND it turns the next rotor (except for last rotor by mechanical reasons; no pawl
     // for last rotor's notches)
@@ -257,17 +259,26 @@ void tick_Enigma(Enigma *self)
     #endif
 
     // determine tick for each rotor
-    int carry = 1;      // always tick first rotor
+    int carry = 1;    // always tick first rotor
     for (size_t i = 0; i < self->num_rotors; i++)
     {
+        // Beta and Gamma rotors never tick
+        if (self->rotors[i]->rotorConfig[27] == 0) continue;
+
         int prevOffset = self->rotors[i]->offset;
         int haveTicked = 0;
 
         // move rotor if carry
         if (carry)
         {
-            self->rotors[i]->offset = (self->rotors[i]->offset < 25) ? ++self->rotors[i]->offset : 0;
+            self->rotors[i]->offset = (self->rotors[i]->offset < 25) ? (self->rotors[i]->offset + 1) : 0;
             haveTicked = 1;
+        }
+
+        // rotor prior to Beta/Gamma rotor doesn't tick by double stepping
+        if ((i + 1) < self->num_rotors)
+        {
+            if (self->rotors[i+1]->rotorConfig[27] == 0) continue;
         }
 
         #ifdef DEBUG
@@ -290,7 +301,7 @@ void tick_Enigma(Enigma *self)
                     printf("Double step occuring...\n");
                     #endif
 
-                    self->rotors[i]->offset = (self->rotors[i]->offset < 25) ? ++self->rotors[i]->offset : 0;
+                    self->rotors[i]->offset = (self->rotors[i]->offset < 25) ? (self->rotors[i]->offset + 1) : 0;
                 }
 
                 carry = 1;  // notch was present during tick; carry info to next rotor
